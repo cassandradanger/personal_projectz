@@ -10,9 +10,33 @@ module.exports = function(grunt) {
                 src: 'client/scripts/app.js',
                 dest: 'public/javascripts/app.min.js'
             },
-            something: {
-                src: 'client/scripts/controllers/registration.js',
-                dest: 'public/javascripts/controllers/registration.min.js'
+            pos: {
+                src: 'client/scripts/controllers/pos.js',
+                dest: 'public/javascripts/controllers/pos.min.js'
+            },
+            newVendor: {
+                src: 'client/scripts/controllers/newVendor.js',
+                dest: 'public/javascripts/controllers/newVendor.min.js'
+            },
+            newItem: {
+                src: 'client/scripts/controllers/newItem.js',
+                dest: 'public/javascripts/controllers/newItem.min.js'
+            },
+            vendorList: {
+                src: 'client/scripts/controllers/vendorList.js',
+                dest: 'public/javascripts/controllers/vendorList.min.js'
+            },
+            itemlist: {
+                src: 'client/scripts/controllers/itemList.js',
+                dest: 'public/javascripts/controllers/itemList.min.js'
+            },
+            monthlySales: {
+                src: 'client/scripts/controllers/monthlySales.js',
+                dest: 'public/javascripts/controllers/monthlySales.min.js'
+            },
+            vendorSales: {
+                src: 'client/scripts/controllers/vendorSales.js',
+                dest: 'public/javascripts/controllers/vendorSales.min.js'
             }
         },
         copy: {
@@ -62,7 +86,13 @@ module.exports = function(grunt) {
                 expand: true,
                 cwd: "client",
                 src: [
-                    "views/userinfo.html"
+                    "views/routes/pos.html",
+                    "views/routes/new_vendor.html",
+                    "views/routes/new_item.html",
+                    "views/routes/current_vendor_list.html",
+                    "views/routes/current_item_list.html",
+                    "views/routes/monthly_sales.html",
+                    "views/routes/vendor_sales.html"
                 ],
                 "dest": "public/"
             }
