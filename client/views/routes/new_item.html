@@ -1,1 +1,50 @@
-this is the new item page
+
+
+<section>
+    <form name="newItem" novalidate ng-submit="onSubmit()">
+        <div class ="test">
+            <select>
+                <option value="" disabled="disabled" selected="selected">Item Type</option>
+                <option value="1">Apparel</option>
+                <option value="2">Jewelry</option>
+                <option value="1">Accessory</option>
+                <option value="2">Gift</option>
+                <option value="1">Art</option>
+                <option value="1">Misc</option>
+                <option value="2">Holiday</option>
+            </select>
+        </div>
+
+        <div class ="test">
+            <input type="text" name="vendor" placeholder="Vendor" required="true">
+        </div>
+
+        <div class ="test">
+            <input type="text" name="name" placeholder="Item Name" required="true">
+        </div>
+
+        <div class ="test">
+            <textarea name="description" cols="25" rows="5" placeholder="Description"></textarea><br>
+        </div>
+
+        <div class ="test">
+            <input type="number" name="quantity" placeholder="Quantity" required="true">
+        </div>
+
+        <div class ="test">
+            <input type="number" name="price" placeholder="Price" required="true">
+        </div>
+
+        <div class ="test">
+            <input type="number" name="consignRate" placeholder="Consignment Rate">
+        </div>
+
+        <div class ="test">
+            <input type="number" name="consignPrice" placeholder="Consignment Price">
+        </div>
+
+        <input type="submit" id="save" value="Save"/>
+        <input type="reset" id="cancel" value="Cancel"/>
+
+    </form>
+</section>

@@ -1,1 +1,58 @@
-this is the pos page
+
+<div class = "col-md-10 well">
+    <form name="itemAdd" novalidate ng-submit="onSubmit()">
+        <input type = "text" name = "enter" placeholder = "Enter Item # Here" style="display: inline">
+        <input type="submit" id="save" value="Save" style="display: inline"/>
+        <input type="reset" id="clear" value="Clear" style="display: inline"/>
+    </form>
+    <br/>
+    <br/>
+    <br/>
+
+    <div class = "col-md-2 well" id="blah">
+        <input type = "number" name = "discount" placeholder = "discount">
+        <p>sales tax: {{tax}}</p>
+        <p>total: {{total}}</p>
+        <input type="submit" id="checkout" value="Checkout"/>
+    </div>
+
+    <div class = "col-md-2 well" id="blah">
+        <h5>Checkout</h5>
+        <input type="submit" id="cash" value="Cash"/>
+        <br/>
+        <input type="submit" id="credit" value="Credit"/>
+        <br/>
+        <input type="submit" id="payout" value="Payout"/>
+        <br/>
+        <input type="submit" id="cancel" value="Cancel"/>
+    </div>
+
+    <div class = "col-md-2 well" id="blah">
+        <h5>Cash</h5>
+        <p>total: {{total}}</p>
+        <input type="text" id="cashGiven" placeholder="Cash Given"/>
+        <p>change: {{change}}</p>
+    </div>
+
+    <div class = "col-md-2 well" id="blah">
+        <h5>Credit</h5>
+        <input type="submit" id="visa" value="Visa"/>
+        <br/>
+        <input type="submit" id="amex" value="Amex"/>
+        <br/>
+        <input type="submit" id="discover" value="Discover"/>
+        <br/>
+        <input type="submit" id="mc" value="MasterCard"/>
+    </div>
+
+    <div class = "col-md-2 well" id="blah">
+        <h5>Payout</h5>
+        <p>total: {{total}}</p>
+        <input type = "text" name = "artist" placeholder = "Vendor Name">
+        <input type = "text" name = "employee" placeholder = "Employee Name">
+        Cash <input type = "checkbox" ng-model="cashChecked" name = "cash">
+        Check <input type = "checkbox" ng-model="checkChecked" name = "check">
+        <input type = "text" name = "checkNum" placeholder = "Check Number">
+    </div>
+
+</div>
