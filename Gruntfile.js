@@ -37,6 +37,10 @@ module.exports = function(grunt) {
             vendorSales: {
                 src: 'client/scripts/controllers/vendorSales.js',
                 dest: 'public/javascripts/controllers/vendorSales.min.js'
+            },
+            scripts: {
+                src: 'client/scripts/scripts.js',
+                dest: 'public/javascripts/scripts.min.js'
             }
         },
         copy: {

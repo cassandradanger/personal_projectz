@@ -41,11 +41,21 @@ myApp.config(['$routeProvider', function($routeProvider){
 
 
 
-//myApp.controller('WelcomeController',["$scope", "$http", function($scope, $http){
-//    $scope.heading = "Message: ";
-//    $scope.persons = [];
+
+
+
+
+
+
+
+
+
+
 //
-//    $scope.updateMessage = function(){
+//
+//
+//
+//        function(){
 //        $scope.message = "Hello, " + $scope.name + "!";
 //    };
 //
