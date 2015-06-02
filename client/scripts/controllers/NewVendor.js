@@ -6,6 +6,7 @@ console.log("New Vendor.js controller is Loaded");
 myApp.controller('NewVendorController',["$scope", "$http", function($scope, $http) {
     $scope.vendor = {};
     $scope.vendors = [];
+    console.log("this is an array"+ $scope.vendors);
 
     $scope.onSubmit = function(){
         console.log($scope.vendor.firstName);
@@ -15,6 +16,7 @@ myApp.controller('NewVendorController',["$scope", "$http", function($scope, $htt
         console.log($scope.vendor.email);
         console.log($scope.vendor.address);
         console.log($scope.vendor.description);
+        console.log("this is an array"+ $scope.vendors[1]);
     };
 
     var fetchVendor = function () {
@@ -25,7 +27,7 @@ myApp.controller('NewVendorController',["$scope", "$http", function($scope, $htt
             $scope.vendor = {};
             $scope.vendors = response.data;
             console.log(response.data);
-            return response.data
+            return response.data;
 
         })
     };
@@ -36,6 +38,6 @@ myApp.controller('NewVendorController',["$scope", "$http", function($scope, $htt
         return $http.post('/vendors', vendor).then(fetchVendor());
     };
     $scope.remove = function(vendor){
-        return $http.delete('/vendors/' + vendor._id);
+        $http.delete('/vendors/' + vendor._id).success(fetchVendor());
     };
 }]);

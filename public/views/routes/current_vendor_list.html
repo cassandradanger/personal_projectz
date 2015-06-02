@@ -4,6 +4,7 @@
     <!--<li ng-repeat="vendor in vendors">{{vendor.lastName}}  <button ng-click="remove(vendor)">remove</button></li>-->
 
 VENDORS!!!
+   <p>this is an array {{vendors[1]._id}}</p>
     <table>
         <tr>
             <th>ID</th>
@@ -14,17 +15,18 @@ VENDORS!!!
             <th>Email</th>
             <th>Address</th>
             <th>Description</th>
+            <th>Remove/Edit</th>
         </tr>
-        <tr>
-            <td><div ng-repeat="vendor in vendors"><p>{{vendor._id}}</p></div></td>
-            <td><div ng-repeat="vendor in vendors"><p>{{vendor.firstName}}</p></div></td>
-            <td><div ng-repeat="vendor in vendors"><p>{{vendor.lastName}}</p></div></td>
-            <td><div ng-repeat="vendor in vendors"><p>{{vendor.company}}</p></div></td>
-            <td><div ng-repeat="vendor in vendors"><p>{{vendor.phone}}</p></div></td>
-            <td><div ng-repeat="vendor in vendors"><p>{{vendor.email}}</p></div></td>
-            <td><div ng-repeat="vendor in vendors"><p>{{vendor.address}}</p></div></td>
-            <td><div ng-repeat="vendor in vendors"><p>{{vendor.description}}</p></div></td>
-            <td><div ng-repeat="vendor in vendors"><button ng-click="remove(vendor)">remove</button></div></td>
+        <tr ng-repeat="vendor in vendors">
+            <td><p>{{vendor._id}}</p></td>
+            <td><p>{{vendor.firstName}}</p></td>
+            <td><p>{{vendor.lastName}}</p></td>
+            <td><p>{{vendor.company}}</p></td>
+            <td><p>{{vendor.phone}}</p></td>
+            <td><p>{{vendor.email}}</p></td>
+            <td><p>{{vendor.address}}</p></td>
+            <td><p>{{vendor.description}}</p></td>
+            <td><button ng-click="remove(vendor)">remove</button></td>
         </tr>
     </table>
 

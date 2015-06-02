@@ -1,1 +1,30 @@
-current item list
+<section ng-controller="NewItemController">
+    ITEMS!
+    <br/>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Vendor</th>
+            <th>Type</th>
+            <th>Item Name</th>
+            <th>Description</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Consignment Rate</th>
+            <th>Consignment Price</th>
+            <th>Remove/Edit</th>
+        </tr>
+        <tr ng-repeat="item in items">
+            <td><p>{{item._id}}</p></td>
+            <td><p>{{item.vendor}}</p></td>
+            <td><p>{{item.itemType}}</p></td>
+            <td><p>{{item.itemName}}</p></td>
+            <td><p>{{item.description}}</p></td>
+            <td><p>{{item.quantity}}</p></td>
+            <td><p>{{item.price}}</p></td>
+            <td><p>{{item.consignRate}}</p></td>
+            <td><p>{{item.consignPrice}}</p></td>
+            <td><button ng-click="remove(item)">remove</button></td>
+        </tr>
+    </table>
+</section>

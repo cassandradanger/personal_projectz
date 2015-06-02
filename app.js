@@ -7,8 +7,9 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var vendors = require('./routes/vendors');
+var items = require('./routes/items');
 
-var users = require('./routes/users');
+//var users = require('./routes/users');
 
 var app = express();
 
@@ -26,6 +27,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 //app.use('/users', users);
 app.use('/vendors', vendors);
+app.use('/items', items);
 
 
 // Mongo setup

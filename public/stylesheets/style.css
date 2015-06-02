@@ -7,8 +7,8 @@ a {
   color: #00B7FF;
 }
 
-#blah{
-  height: 75%;
+table{
+  float: left;
 }
 
 table, th, td {
@@ -22,6 +22,7 @@ th, td {
 
 td{
   border: 1px solid black;
+  width: 200px;
 }
 
 tr{

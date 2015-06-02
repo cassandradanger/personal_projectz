@@ -1,49 +1,52 @@
-
-
-<section>
+<section ng-controller="NewItemController">
     <form name="newItem" novalidate ng-submit="onSubmit()">
-        <div class ="test">
-            <select>
-                <option value="" disabled="disabled" selected="selected">Item Type</option>
-                <option value="1">Apparel</option>
-                <option value="2">Jewelry</option>
-                <option value="1">Accessory</option>
-                <option value="2">Gift</option>
-                <option value="1">Art</option>
-                <option value="1">Misc</option>
-                <option value="2">Holiday</option>
-            </select>
+        <select ng-model="item.itemType">
+            <option value="" disabled="disabled" selected="selected">Item Type</option>
+            <option value="apparel">Apparel</option>
+            <option value="jewelry">Jewelry</option>
+            <option value="accessory">Accessory</option>
+            <option value="gift">Gift</option>
+            <option value="art">Art</option>
+            <option value="misc">Misc</option>
+            <option value="holiday">Holiday</option>
+        </select>
+
+
+        <section ng-controller="NewVendorController">
+            <div class="vendorList">
+                <select ng-model="item.vendor">
+                    <option value="" disabled="disabled" selected="selected">Vendor</option>
+                    <option ng-repeat="vendor in vendors" ng-model="item.vendor" value="{{vendor.firstName}}">{{vendor.firstName}}</option>
+                </select>
+            </div>
+        </section>
+
+
+        <div>
+            <input type="text" ng-model="item.itemName" placeholder="Item Name">
         </div>
 
-        <div class ="test">
-            <input type="text" name="vendor" placeholder="Vendor" required="true">
+        <div>
+            <textarea ng-model="item.description" cols="25" rows="5" placeholder="Description"></textarea><br>
         </div>
 
-        <div class ="test">
-            <input type="text" name="name" placeholder="Item Name" required="true">
+        <div>
+            <input type="number" ng-model="item.quantity" placeholder="Quantity">
         </div>
 
-        <div class ="test">
-            <textarea name="description" cols="25" rows="5" placeholder="Description"></textarea><br>
+        <div>
+            <input type="number" ng-model="item.price" placeholder="Price">
         </div>
 
-        <div class ="test">
-            <input type="number" name="quantity" placeholder="Quantity" required="true">
+        <div>
+            <input type="number" ng-model="item.consignRate" placeholder="Consignment Rate">
         </div>
 
-        <div class ="test">
-            <input type="number" name="price" placeholder="Price" required="true">
+        <div>
+            <p>Consignment Price: {{consignPrice}}</p>
         </div>
 
-        <div class ="test">
-            <input type="number" name="consignRate" placeholder="Consignment Rate">
-        </div>
-
-        <div class ="test">
-            <input type="number" name="consignPrice" placeholder="Consignment Price">
-        </div>
-
-        <input type="submit" id="save" value="Save"/>
+        <input type="submit" ng-click="add(item)" id="save" value="Save"/>
         <input type="reset" id="cancel" value="Cancel"/>
 
     </form>
