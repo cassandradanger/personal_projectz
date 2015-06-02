@@ -23,7 +23,7 @@ router.post('/', function(req, res, next) {
 
 /* GET /todos/:id */
 router.get('/', function(req, res, next) {
-    VendorSchema.find(function (err, post) {
+    VendorSchema.find({}, function (err, post) {
         if (err) return next(err);
         res.json(post);
         console.log(post);
@@ -38,13 +38,15 @@ router.get('/', function(req, res, next) {
 //    });
 //});
 //
-///* DELETE /todos/:id */
-//router.delete('/:id', function(req, res, next) {
-//    Todo.findByIdAndRemove(req.params.id, req.body, function (err, post) {
-//        if (err) return next(err);
-//        res.json(post);
-//    });
-//});
+/* DELETE /todos/:id */
+router.delete('/:id', function(req, res, next) {
+    console.log("Delete");
+    console.log(req.params);
+    VendorSchema.findByIdAndRemove(req.params.id, req.body, function (err, post) {
+        if (err) return next(err);
+        res.json(post);
+    });
+});
 
 console.log('vendors.js route loaded');
 

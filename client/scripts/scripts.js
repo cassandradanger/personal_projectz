@@ -47,7 +47,7 @@ function processData(data){
             .appendTo(ul);
 
         var liLastName = $('<li/>')
-            .text('Name: ' + lastName)
+            .text('Name: ' + tName)
             .appendTo(ul);
 
         //var liDate = $('<li/>')

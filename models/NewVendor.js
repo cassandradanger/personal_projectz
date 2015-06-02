@@ -11,5 +11,5 @@ var VendorSchema = new mongoose.Schema({
     created_on: { type:Date, default: new Date() }
 });
 
-console.log("Vendor Model Loaded");
+console.log("Vendor Model Loaded")
 module.exports = mongoose.model('NewVendor', VendorSchema);

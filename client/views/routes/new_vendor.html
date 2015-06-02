@@ -1,31 +1,31 @@
 <section ng-controller="NewVendorController">
     <form name="newVendor" novalidate ng-submit="onSubmit()">
         <div>
-            <input type="text" ng-model="vendor.firstName" placeholder="First Name" required="true">
+            <input type="text" ng-model="vendor.firstName" placeholder="First Name">
         </div>
 
         <div>
-            <input type="text" name="lastName" placeholder="Last Name" required="true">
+            <input type="text" ng-model="vendor.lastName" placeholder="Last Name">
         </div>
 
         <div>
-            <input type="text" name="company" placeholder="Company Name" required="true">
+            <input type="text" ng-model="vendor.company" placeholder="Company Name">
         </div>
 
         <div>
-            <input type="tel" name="phone" placeholder="Phone Number">
+            <input type="tel" ng-model="vendor.phone" placeholder="Phone Number">
         </div>
 
         <div>
-            <input type="email" name="email" placeholder="Email Address" required="true">
+            <input type="text" ng-model="vendor.email" placeholder="Email Address">
         </div>
 
         <div>
-            <input type="text" name="address" placeholder="Address">
+            <input type="text" ng-model="vendor.address" placeholder="Address">
         </div>
 
         <div>
-            <textarea name="description" cols="25" rows="5" placeholder="Description"></textarea><br>
+            <textarea ng-model="vendor.description" cols="25" rows="5" placeholder="Description"></textarea><br>
         </div>
 
         <input type="submit" ng-click="add(vendor)" id="save" value="Save"/>

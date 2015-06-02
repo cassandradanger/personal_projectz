@@ -3,23 +3,19 @@
  */
 console.log("New Vendor.js controller is Loaded");
 
-//myApp.controller('NewVendorController',['$scope', function($scope){
-//    firstName = $scope.firstName;
-//    console.log("new vendor is loaded");
-//    $scope.onSubmit = function(){
-//        console.log("CLICKED");
-//        console.log(firstName);
-//    }
-//}]);
-
-
 myApp.controller('NewVendorController',["$scope", "$http", function($scope, $http) {
     $scope.vendor = {};
     $scope.vendors = [];
 
     $scope.onSubmit = function(){
         console.log($scope.vendor.firstName);
-    }
+        console.log($scope.vendor.lastName);
+        console.log($scope.vendor.company);
+        console.log($scope.vendor.phone);
+        console.log($scope.vendor.email);
+        console.log($scope.vendor.address);
+        console.log($scope.vendor.description);
+    };
 
     var fetchVendor = function () {
         return $http.get('/vendors').then(function (response) {
@@ -38,5 +34,8 @@ myApp.controller('NewVendorController',["$scope", "$http", function($scope, $htt
 
     $scope.add = function(vendor){
         return $http.post('/vendors', vendor).then(fetchVendor());
+    };
+    $scope.remove = function(vendor){
+        return $http.delete('/vendors/' + vendor._id);
     };
 }]);

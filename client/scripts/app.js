@@ -18,7 +18,7 @@ myApp.config(['$routeProvider', function($routeProvider){
         }).
         when('/current_vendor_list', {
             templateUrl: "/views/routes/current_vendor_list.html",
-            controller: 'VendorListController'
+            controller: 'NewVendorController'
         }).
         when('/current_item_list', {
             templateUrl: "/views/routes/current_item_list.html",
