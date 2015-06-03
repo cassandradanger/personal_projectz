@@ -2,13 +2,13 @@
     <form name="newItem" novalidate ng-submit="onSubmit()">
         <select ng-model="item.itemType">
             <option value="" disabled="disabled" selected="selected">Item Type</option>
-            <option value="apparel">Apparel</option>
-            <option value="jewelry">Jewelry</option>
-            <option value="accessory">Accessory</option>
-            <option value="gift">Gift</option>
-            <option value="art">Art</option>
-            <option value="misc">Misc</option>
-            <option value="holiday">Holiday</option>
+            <option value="APPAREL">Apparel</option>
+            <option value="JEWELRY">Jewelry</option>
+            <option value="ACCESSORY">Accessory</option>
+            <option value="GIFT">Gift</option>
+            <option value="ART">Art</option>
+            <option value="MISC">Misc</option>
+            <option value="HOLIDAY">Holiday</option>
         </select>
 
 
@@ -16,7 +16,7 @@
             <div class="vendorList">
                 <select ng-model="item.vendor">
                     <option value="" disabled="disabled" selected="selected">Vendor</option>
-                    <option ng-repeat="vendor in vendors" ng-model="item.vendor" value="{{vendor.firstName}}">{{vendor.firstName}}</option>
+                    <option ng-repeat="vendor in vendors" ng-model="item.vendor" value="{{vendor.company}}">{{vendor.company}}</option>
                 </select>
             </div>
         </section>

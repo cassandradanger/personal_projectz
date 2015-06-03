@@ -3,7 +3,26 @@
     <br/>
     <table>
         <tr>
-            <th>ID</th>
+            <td align="right">Search :</td>
+            <td><input ng-model="query[queryBy]" /></td>
+        </tr>
+        <tr>
+            <td align="right">Search By :</td>
+            <td>
+                <select ng-model="queryBy">
+                    <option value="$"></option>
+                    <option value="vendor">Vendor</option>
+                    <option value="itemName">Item Name</option>
+                    <option value="itemType">Item Type</option>
+                </select>
+            </td>
+        </tr>
+    </table>
+    <!--Search: <input ng-model="query">-->
+    <br/>
+    <table>
+        <tr>
+            <th>Item ID</th>
             <th>Vendor</th>
             <th>Type</th>
             <th>Item Name</th>
@@ -14,7 +33,7 @@
             <th>Consignment Price</th>
             <th>Remove/Edit</th>
         </tr>
-        <tr ng-repeat="item in items">
+        <tr ng-repeat="item in items | filter:query | orderBy:orderProp">
             <td><p>{{item._id}}</p></td>
             <td><p>{{item.vendor}}</p></td>
             <td><p>{{item.itemType}}</p></td>

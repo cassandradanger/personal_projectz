@@ -1,13 +1,19 @@
 
 <div class = "col-md-10 well">
-    <form name="itemAdd" novalidate ng-submit="onSubmit()">
-        <input type = "text" name = "enter" placeholder = "Enter Item # Here" style="display: inline">
-        <input type="submit" id="save" value="Save" style="display: inline"/>
-        <input type="reset" id="clear" value="Clear" style="display: inline"/>
-    </form>
-    <br/>
-    <br/>
-    <br/>
+    <section ng-controller="NewItemController">
+
+        <form name="itemAdd" novalidate ng-submit="onSubmit()">
+            <input type = "text" name = "enter" placeholder = "Enter Item # Here" style="display: inline">
+            <input type="submit" id="save" value="Save" style="display: inline"/>
+            <input type="reset" id="clear" value="Clear" style="display: inline"/>
+        </form>
+        <br/>
+        <br/>
+        <br/>
+    </section>
+
+
+
 
     <div class = "col-md-2 well" id="blah">
         <input type = "number" name = "discount" placeholder = "discount">

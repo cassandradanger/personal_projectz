@@ -1,23 +1,37 @@
 <section ng-controller="NewVendorController">
+    VENDORS!!!!
+    <br/>
+    <table>
+        <tr>
+            <td align="right">Search :</td>
+            <td><input ng-model="query[queryBy]" /></td>
+        </tr>
+        <tr>
+            <td align="right">Search By :</td>
+            <td>
+                <select ng-model="queryBy">
+                    <option value="$"></option>
+                    <option value="firstName">First Name</option>
+                    <option value="lastName">Last Name</option>
+                    <option value="company">Company Name</option>
+                </select>
+            </td>
+        </tr>
+    </table>
 
-<!--<li ng-repeat="vendor in vendors">{{vendor.firstName}}  <button ng-click="remove(vendor)">remove</button></li>-->
-    <!--<li ng-repeat="vendor in vendors">{{vendor.lastName}}  <button ng-click="remove(vendor)">remove</button></li>-->
-
-VENDORS!!!
-   <p>this is an array {{vendors[1]._id}}</p>
     <table>
         <tr>
             <th>ID</th>
             <th>First Name</th>
             <th>Last Name</th>
-            <th>Company</th>
+            <th>Company Name</th>
             <th>Phone</th>
             <th>Email</th>
             <th>Address</th>
             <th>Description</th>
             <th>Remove/Edit</th>
         </tr>
-        <tr ng-repeat="vendor in vendors">
+        <tr ng-repeat="vendor in vendors | filter:query | orderBy:orderProp">
             <td><p>{{vendor._id}}</p></td>
             <td><p>{{vendor.firstName}}</p></td>
             <td><p>{{vendor.lastName}}</p></td>

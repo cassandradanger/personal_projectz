@@ -6,7 +6,9 @@ console.log("New Vendor.js controller is Loaded");
 myApp.controller('NewVendorController',["$scope", "$http", function($scope, $http) {
     $scope.vendor = {};
     $scope.vendors = [];
-    console.log("this is an array"+ $scope.vendors);
+    $scope.query = {};
+    $scope.queryBy = '$';
+    $scope.orderProp = 'vendor';
 
     $scope.onSubmit = function(){
         console.log($scope.vendor.firstName);

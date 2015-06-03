@@ -6,11 +6,14 @@ console.log("New Item.js controller is Loaded");
 myApp.controller('NewItemController',["$scope", "$http", function($scope, $http) {
     $scope.item = {};
     $scope.items = [];
+    $scope.query = {};
+    $scope.queryBy = '$';
+    $scope.orderProp = 'vendor';
+
 
     $scope.onSubmit = function(){
         console.log($scope.item.itemName);
         console.log("button is pressed!");
-
     };
 
     var fetchItem = function () {
@@ -22,7 +25,6 @@ myApp.controller('NewItemController',["$scope", "$http", function($scope, $http)
             $scope.items = response.data;
             console.log(response.data);
             return response.data
-
         })
     };
 
@@ -31,9 +33,7 @@ myApp.controller('NewItemController',["$scope", "$http", function($scope, $http)
     $scope.add = function(item){
         return $http.post('/items', item).then(fetchItem());
     };
-
     $scope.remove = function(item){
         $http.delete('/items/' + item._id).success(fetchItem());
     };
-
 }]);
