@@ -1,10 +1,10 @@
 
 <div class = "col-md-10 well">
-    <section ng-controller="NewItemController">
+    <section ng-controller="PosController">
 
-        <form name="itemAdd" novalidate ng-submit="onSubmit()">
+        <form name="itemAdd" novalidate ng-submit="getByID()">
             <input type = "text" name = "enter" placeholder = "Enter Item # Here" style="display: inline">
-            <input type="submit" id="save" value="Save" style="display: inline"/>
+            <input type="submit" id="save" value="Save"  style="display: inline"/>
             <input type="reset" id="clear" value="Clear" style="display: inline"/>
         </form>
         <br/>

@@ -13,5 +13,4 @@ var ItemSchema = new mongoose.Schema({
 });
 
 console.log("Item Model Loaded");
-console.log(ItemSchema.purchaseID);
 module.exports = mongoose.model('NewItem', ItemSchema);

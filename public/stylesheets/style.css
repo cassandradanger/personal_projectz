@@ -16,7 +16,7 @@ table, th, td {
   border-collapse: collapse;
 }
 th, td {
-  padding: 15px;
+  padding: 5px;
   border: 1px solid black;
 }
 
@@ -27,4 +27,9 @@ td{
 
 tr{
   border: 1px solid black;
+}
+
+.well{
+  margin: 5px;
+  padding: 10px;
 }

@@ -40,8 +40,8 @@
             <td><p>{{item.itemName}}</p></td>
             <td><p>{{item.description}}</p></td>
             <td><p>{{item.quantity}}</p></td>
-            <td><p>{{item.price}}</p></td>
-            <td><p>{{item.consignRate}}</p></td>
+            <td><p>${{item.price}}</p></td>
+            <td><p>{{item.consignRate}}%</p></td>
             <td><p>{{item.consignPrice}}</p></td>
             <td><button ng-click="remove(item)">remove</button></td>
         </tr>

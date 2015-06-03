@@ -22,9 +22,9 @@
     <table>
         <tr>
             <th>ID</th>
+            <th>Company Name</th>
             <th>First Name</th>
             <th>Last Name</th>
-            <th>Company Name</th>
             <th>Phone</th>
             <th>Email</th>
             <th>Address</th>
@@ -33,9 +33,9 @@
         </tr>
         <tr ng-repeat="vendor in vendors | filter:query | orderBy:orderProp">
             <td><p>{{vendor._id}}</p></td>
+            <td><p>{{vendor.company}}</p></td>
             <td><p>{{vendor.firstName}}</p></td>
             <td><p>{{vendor.lastName}}</p></td>
-            <td><p>{{vendor.company}}</p></td>
             <td><p>{{vendor.phone}}</p></td>
             <td><p>{{vendor.email}}</p></td>
             <td><p>{{vendor.address}}</p></td>

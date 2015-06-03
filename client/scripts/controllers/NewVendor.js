@@ -18,7 +18,6 @@ myApp.controller('NewVendorController',["$scope", "$http", function($scope, $htt
         console.log($scope.vendor.email);
         console.log($scope.vendor.address);
         console.log($scope.vendor.description);
-        console.log("this is an array"+ $scope.vendors[1]);
     };
 
     var fetchVendor = function () {
