@@ -35,5 +35,9 @@ tr{
 }
 
 #main{
-  height: 500px;
+  height: 400px;
+}
+
+#nav{
+  padding-bottom: 20px;
 }

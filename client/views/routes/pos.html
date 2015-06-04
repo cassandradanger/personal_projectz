@@ -1,5 +1,5 @@
 <section ng-controller="PosController">
-    <div class = "col-md-10 well" id="main">
+    <div class = "col-md-offset-1 col-md-10 well" id="main">
 
         <form name="itemGet" novalidate ng-submit="getByID()">
             <input type = "search" ng-model="inputId" name = "enter" placeholder = "Enter Item # Here" style="display: inline">
@@ -25,13 +25,13 @@
                 <td><p>{{item.itemType}}</p></td>
                 <td><p>{{item.itemName}}</p></td>
                 <td><p>${{item.price}}</p></td>
-                <td> <input type="reset" id="clear" value="Clear"/></td>
+                <td><input type="button" data-ng-click="removeRow($index)" value="remove"/></td>
             </tr>
         </table>
     </div>
 
 
-    <div class = "col-md-2 well" id="blah">
+    <div class = "col-md-offset-1 col-md-2 well" id="blah">
         <!--<input type = "number" name = "discount" placeholder = "discount">-->
         <!--<p>sales tax: {{tax}}</p>-->
         <p>Total: $ {{total}}</p>
