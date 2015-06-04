@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var vendors = require('./routes/vendors');
 var items = require('./routes/items');
+var pos = require('./routes/pos');
 
 //var users = require('./routes/users');
 
@@ -28,6 +29,7 @@ app.use('/', routes);
 //app.use('/users', users);
 app.use('/vendors', vendors);
 app.use('/items', items);
+app.use('/pos', pos);
 
 
 // Mongo setup
