@@ -23,9 +23,10 @@ var path = require('path');
 
 /* GET /todos/:id */
 router.get('/search/:id', function(req, res, next) {
-    ItemSchema.find(req.params.id, function (err, post) {
+    ItemSchema.findById(req.params.id, function (err, post) {
         if (err) return next(err);
         console.log(post);
+        console.log(req.params.id);
         console.log("THIS IS THE POS ROUTE");
         res.json(post);
     });

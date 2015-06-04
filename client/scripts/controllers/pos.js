@@ -3,6 +3,8 @@
  */
 
 myApp.controller('PosController',['$scope', '$http', function($scope,$http){
+    var vm = this;
+    vm.Total = 0;
     $scope.item = {};
     $scope.items = [];
     console.log("pos is loaded");
@@ -25,25 +27,34 @@ myApp.controller('PosController',['$scope', '$http', function($scope,$http){
         //Celebrate
         //Much
         console.log("Hi!");
-        console.log($scope.item._id);
+        console.log($scope.inputId);
 
 
         var fetchPosItem = function () {
             console.log("the POS fetch function is working");
 
-            $http.get('/pos/search/'+ $scope.item._id).then(function (response) {
-                console.log($scope.item._id);
+            $http.get('/pos/search/'+ $scope.inputId).then(function (response) {
+                console.log($scope.inputId);
                 console.log("the POS function is STILL working");
 
                 if (response.status !== 200) {
                     throw new Error("failed to fetch item");
                 }
 
-                $scope.item = {};
-                $scope.items = response.data;
+                $scope.item = response.data;
+                $scope.items.push(response.data);
+
+                $scope.total = 0;
+
+                for(var i = 0; i < $scope.items.length; i++ ){
+                    //console.log("********** HERE : ", $scope.items.)
+                    $scope.total += $scope.items[i].price;
+                }
+
+                console.log("HERE IS THE TOTAL: ", $scope.total);
 
                 //databind the response to where you want to show things
-                console.log(response.data);
+                console.log('fetchPosItem: ', response.data);
                 console.log("the POS function is STILL STILL working");
                 return response.data;
 
@@ -51,4 +62,6 @@ myApp.controller('PosController',['$scope', '$http', function($scope,$http){
         };
         fetchPosItem();
     };
+
+
 }]);

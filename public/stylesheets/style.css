@@ -20,7 +20,7 @@ th, td {
   border: 1px solid black;
 }
 
-td{
+td, th{
   border: 1px solid black;
   width: 200px;
 }
@@ -32,4 +32,8 @@ tr{
 .well{
   margin: 5px;
   padding: 10px;
+}
+
+#main{
+  height: 500px;
 }

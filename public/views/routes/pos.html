@@ -1,9 +1,8 @@
-
-<div class = "col-md-10 well">
-    <section ng-controller="PosController">
+<section ng-controller="PosController">
+    <div class = "col-md-10 well" id="main">
 
         <form name="itemGet" novalidate ng-submit="getByID()">
-            <input type = "search" ng-model="item._id" name = "enter" placeholder = "Enter Item # Here" style="display: inline">
+            <input type = "search" ng-model="inputId" name = "enter" placeholder = "Enter Item # Here" style="display: inline">
             <input type="submit" id="save" value="Add"  style="display: inline"/>
             <input type="reset" id="clear" value="Clear" style="display: inline"/>
         </form>
@@ -17,35 +16,27 @@
                 <th>Vendor</th>
                 <th>Type</th>
                 <th>Item Name</th>
-                <th>Description</th>
-                <th>Quantity</th>
                 <th>Price</th>
-                <th>Consignment Rate</th>
-                <th>Consignment Price</th>
-                <th>Remove/Edit</th>
+                <th>Remove</th>
             </tr>
-            <tr ng-repeat="item in items | filter:search | orderBy:orderProp">
+            <tr ng-repeat="item in items">
                 <td><p>{{item._id}}</p></td>
                 <td><p>{{item.vendor}}</p></td>
                 <td><p>{{item.itemType}}</p></td>
                 <td><p>{{item.itemName}}</p></td>
-                <td><p>{{item.description}}</p></td>
-                <td><p>{{item.quantity}}</p></td>
                 <td><p>${{item.price}}</p></td>
-                <td><p>{{item.consignRate}}%</p></td>
-                <td><p>{{item.consignPrice}}</p></td>
-                <td><button ng-click="remove(item)">remove</button></td>
+                <td> <input type="reset" id="clear" value="Clear"/></td>
             </tr>
         </table>
+    </div>
 
 
-
-    <!--<div class = "col-md-2 well" id="blah">-->
+    <div class = "col-md-2 well" id="blah">
         <!--<input type = "number" name = "discount" placeholder = "discount">-->
         <!--<p>sales tax: {{tax}}</p>-->
-        <!--<p>total: {{total}}</p>-->
-        <!--<input type="submit" id="checkout" value="Checkout"/>-->
-    <!--</div>-->
+        <p>Total: $ {{total}}</p>
+        <input type="submit" id="checkout" value="Checkout"/>
+    </div>
 
     <!--<div class = "col-md-2 well" id="blah">-->
         <!--<h5>Checkout</h5>-->
@@ -86,4 +77,4 @@
         <!--<input type = "text" name = "checkNum" placeholder = "Check Number">-->
     <!--</div>-->
 
-</div>
+</section>
