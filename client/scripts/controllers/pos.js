@@ -52,9 +52,15 @@ myApp.controller('PosController',['$scope', '$http', function($scope,$http){
                     $scope.removeRow = function (idx) {
                         $scope.items.splice(idx, 1);
                         $scope.total -= this.item.price;
+                    };
 
+                    $scope.change = 0;
+
+                    $scope.changeFunc = function(){
+                        $scope.change = $scope.cashGiven - $scope.total
                     };
                 };
+
                 $scope.inputId = '';
 
                 console.log("HERE IS THE TOTAL: ", $scope.total);

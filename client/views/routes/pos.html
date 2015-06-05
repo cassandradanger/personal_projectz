@@ -30,51 +30,64 @@
         </table>
     </div>
 
+    <div class = "checkout_shit">
+        <div class = "col-md-offset-1 col-md-2 well" id="blah">
+            <!--<input type = "number" name = "discount" placeholder = "discount">-->
+            <!--<p>sales tax: {{tax}}</p>-->
+            <p>Total: $ {{total}}</p>
+            <p style="display: inline">Checkout: </p><input type="checkbox" ng-model="checkout" value="Checkout"/>
+        </div>
 
-    <div class = "col-md-offset-1 col-md-2 well" id="blah">
-        <!--<input type = "number" name = "discount" placeholder = "discount">-->
-        <!--<p>sales tax: {{tax}}</p>-->
-        <p>Total: $ {{total}}</p>
-        <input type="submit" id="checkout" value="Checkout"/>
+        <div class="check-element animate-show" ng-show="checkout">
+            <div class = "col-md-2 well" id="blah">
+                <p style="display: inline">Cash: </p><input type="checkbox" ng-model="cash" value="Cash"/>
+                <br/>
+                <p style="display: inline">Credit: </p><input type="checkbox" ng-model="credit" value="Credit"/>
+                <br/>
+                <p style="display: inline">Payout: </p><input type="checkbox" ng-model="payout" value="Cash"/>
+                <!--<br/>-->
+                <!--<p style="display: inline">Cancel: </p><input type="checkbox" ng-model="cancel" value="Cancel"/>-->
+            </div>
+
+            <div class="check-element animate-show" ng-show="cash">
+                <div class = "col-md-2 well" id="blah">
+                    <h5>Cash</h5>
+                    <input type="text" ng-model="cashGiven" placeholder="Cash Given"/>
+                    <br/>
+                    <p>total: ${{total}}</p>
+                    <input type="button" data-ng-click="changeFunc()" value="Tender">
+                    <br/>
+                    <p>change: ${{change}}</p>
+                </div>
+            </div>
+
+            <div class="check-element animate-show" ng-show="credit">
+                <div class = "col-md-2 well" id="blah">
+                    <h5>Credit</h5>
+                    <p>total: ${{total}}</p>
+                    <input type="submit" id="visa" value="Visa"/>
+                    <br/>
+                    <input type="submit" id="amex" value="Amex"/>
+                    <br/>
+                    <input type="submit" id="discover" value="Discover"/>
+                    <br/>
+                    <input type="submit" id="mc" value="MasterCard"/>
+                </div>
+            </div>
+
+            <div class="check-element animate-show" ng-show="payout">
+                <div class = "col-md-2 well" id="blah">
+                    <h5>Payout</h5>
+                    <p>total: ${{total}}</p>
+                    <input type = "text" name = "artist" placeholder = "Vendor Name">
+                    <input type = "text" name = "employee" placeholder = "Employee Name">
+                    <br/>
+                    Cash <input type = "checkbox" ng-model="cashChecked" name = "cash">
+                    Check <input type = "checkbox" ng-model="checkChecked" name = "check">
+                    <input type = "text" name = "checkNum" placeholder = "Check Number">
+                </div>
+            </div>
+        </div>
     </div>
-
-    <!--<div class = "col-md-2 well" id="blah">-->
-        <!--<h5>Checkout</h5>-->
-        <!--<input type="submit" id="cash" value="Cash"/>-->
-        <!--<br/>-->
-        <!--<input type="submit" id="credit" value="Credit"/>-->
-        <!--<br/>-->
-        <!--<input type="submit" id="payout" value="Payout"/>-->
-        <!--<br/>-->
-        <!--<input type="submit" id="cancel" value="Cancel"/>-->
-    <!--</div>-->
-
-    <!--<div class = "col-md-2 well" id="blah">-->
-        <!--<h5>Cash</h5>-->
-        <!--<p>total: {{total}}</p>-->
-        <!--<input type="text" id="cashGiven" placeholder="Cash Given"/>-->
-        <!--<p>change: {{change}}</p>-->
-    <!--</div>-->
-
-    <!--<div class = "col-md-2 well" id="blah">-->
-        <!--<h5>Credit</h5>-->
-        <!--<input type="submit" id="visa" value="Visa"/>-->
-        <!--<br/>-->
-        <!--<input type="submit" id="amex" value="Amex"/>-->
-        <!--<br/>-->
-        <!--<input type="submit" id="discover" value="Discover"/>-->
-        <!--<br/>-->
-        <!--<input type="submit" id="mc" value="MasterCard"/>-->
-    <!--</div>-->
-
-    <!--<div class = "col-md-2 well" id="blah">-->
-        <!--<h5>Payout</h5>-->
-        <!--<p>total: {{total}}</p>-->
-        <!--<input type = "text" name = "artist" placeholder = "Vendor Name">-->
-        <!--<input type = "text" name = "employee" placeholder = "Employee Name">-->
-        <!--Cash <input type = "checkbox" ng-model="cashChecked" name = "cash">-->
-        <!--Check <input type = "checkbox" ng-model="checkChecked" name = "check">-->
-        <!--<input type = "text" name = "checkNum" placeholder = "Check Number">-->
-    <!--</div>-->
 
 </section>
