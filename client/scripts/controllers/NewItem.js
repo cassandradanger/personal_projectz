@@ -9,11 +9,12 @@ myApp.controller('NewItemController',["$scope", "$http", function($scope, $http)
     $scope.query = {};
     $scope.queryBy = '$';
     $scope.orderProp = 'vendor';
-
+    $scope.item.consignPrice = $scope.item.price * $scope.item.consignRate;
 
     $scope.onSubmit = function(){
         console.log($scope.item.itemName);
         console.log("button is pressed!");
+        $scope.item.consignPrice = ($scope.item.price * $scope.item.consignRate);
     };
 
     var fetchItem = function () {
@@ -24,7 +25,8 @@ myApp.controller('NewItemController',["$scope", "$http", function($scope, $http)
             $scope.item = {};
             $scope.items = response.data;
             console.log(response.data);
-            return response.data
+            return response.data;
+
         })
     };
 

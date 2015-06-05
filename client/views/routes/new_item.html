@@ -43,7 +43,7 @@
         </div>
 
         <div>
-            <p>Consignment Price: {{consignPrice}}</p>
+            <p ng-model="item.consignPrice">Consignment Price: ${{item.price * item.consignRate/100}}</p>
         </div>
 
         <input type="submit" ng-click="add(item)" id="save" value="Save"/>

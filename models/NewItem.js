@@ -9,6 +9,7 @@ var ItemSchema = new mongoose.Schema({
     quantity: Number,
     price: Number,
     consignRate: Number,
+    consignPrice: Number,
     created_on: { type:Date, default: new Date() }
 });
 
