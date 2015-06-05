@@ -8,7 +8,7 @@ myApp.controller('NewVendorController',["$scope", "$http", function($scope, $htt
     $scope.vendors = [];
     $scope.query = {};
     $scope.queryBy = '$';
-    $scope.orderProp = 'vendor';
+    $scope.orderProp = 'company';
 
     $scope.onSubmit = function(){
         console.log($scope.vendor.firstName);

@@ -1,5 +1,5 @@
 body {
-  padding: 50px;
+  padding: 30px 70px 30px 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -9,6 +9,12 @@ a {
 
 table{
   float: left;
+  margin: 0px 10px 0px 10px;
+}
+
+form{
+  float: left;
+  margin: 0px 10px 0px 10px;
 }
 
 table, th, td {
