@@ -69,7 +69,6 @@ myApp.controller('PosController',['$scope', '$http', function($scope,$http){
                 console.log('fetchPosItem: ', response.data);
                 console.log("the POS function is STILL STILL working");
                 return response.data;
-
             })
         };
         fetchPosItem();

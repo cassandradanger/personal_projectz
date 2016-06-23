@@ -33,7 +33,7 @@ myApp.config(['$routeProvider', function($routeProvider){
             controller: 'VendorSalesController'
         }).
         otherwise({
-            redirectTo: '/home'
+            redirectTo: '/'
         });
 }]);
 
