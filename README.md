@@ -17,4 +17,5 @@ TODO:
 Create edit and remove functionality to vendors and items.
 Send receipt information to the database to keep track of sales.
 Connect with a payment system.
+Utilize Angular factories.
 
