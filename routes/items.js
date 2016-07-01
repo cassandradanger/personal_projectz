@@ -26,7 +26,6 @@ router.get('/', function(req, res, next) {
     ItemSchema.find({}, function (err, post) {
         if (err) return next(err);
         res.json(post);
-        console.log(post);
     });
 });
 //
@@ -46,6 +45,16 @@ router.delete('/:id', function(req, res, next) {
         if (err) return next(err);
         res.json(post);
     });
+});
+
+/* EDIT /todos/:id */
+router.post('/:id', function(req, res, next) {
+    console.log("Edit on the server");
+    console.log(req.params);
+    //ItemSchema.findByIdAndUpdate(req.params.id, req.body, function (err, post) {
+    //    if (err) return next(err);
+    //    res.json(post);
+    //});
 });
 
 console.log('items.js route loaded');

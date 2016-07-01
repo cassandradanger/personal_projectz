@@ -22,7 +22,7 @@ myApp.config(['$routeProvider', function($routeProvider){
         }).
         when('/current_item_list', {
             templateUrl: "/views/routes/current_item_list.html",
-            controller: 'ItemListController'
+            controller: 'NewItemController'
         }).
         when('/monthly_sales', {
             templateUrl: "/views/routes/monthly_sales.html",

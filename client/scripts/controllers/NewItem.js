@@ -24,7 +24,6 @@ myApp.controller('NewItemController',["$scope", "$http", function($scope, $http)
             }
             $scope.item = {};
             $scope.items = response.data;
-            console.log(response.data);
             return response.data;
 
         })
@@ -36,6 +35,13 @@ myApp.controller('NewItemController',["$scope", "$http", function($scope, $http)
         return $http.post('/items', item).then(fetchItem());
     };
     $scope.remove = function(item){
-        $http.delete('/items/' + item._id).success(fetchItem());
+        $http.delete('/items/' + item._id).then(fetchItem());
     };
+
+    $scope.edit = function(item){
+        console.log("edit on the client", item);
+        return $http.post('/items/' + item._id).then(fetchItem());
+        console.log('done');
+    };
+
 }]);
